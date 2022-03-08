@@ -1,7 +1,33 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220307204521_Departamento.cs" />
+    <Compile Remove="Migrations\20220307204521_Departamento.Designer.cs" />
+    <Compile Remove="Migrations\20220307204927_Departamento.cs" />
+    <Compile Remove="Migrations\20220307204927_Departamento.Designer.cs" />
+    <Compile Remove="Migrations\20220308030636_Tecnologia Da Informação.cs" />
+    <Compile Remove="Migrations\20220308030636_Tecnologia Da Informação.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EvoSystems.Domain\EvoSystems.Domain.csproj" />
+  </ItemGroup>
 
 </Project>

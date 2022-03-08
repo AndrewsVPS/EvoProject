@@ -1,4 +1,6 @@
-﻿using EvoSystems.Domain.Entities;
+﻿using EvoSystems.Data.Extensions;
+using EvoSystems.Data.Mappings;
+using EvoSystems.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,8 +17,17 @@ namespace EvoSystems.Data.Context
 
         #region "DBSets"
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<Departamento> Users { get; set; }
 
         #endregion
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new DepartamentoMap());
+
+            modelBuilder.SeedData();
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

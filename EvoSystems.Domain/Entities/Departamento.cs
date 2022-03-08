@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace EvoSystems.Domain.Entities
 {
-    class User
+    public class Departamento
     {
+        public Guid Id { get; set; }
+        public string Nome { get; set; }
+        public string Silgla { get; set; }
     }
 }
