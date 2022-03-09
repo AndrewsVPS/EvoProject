@@ -4,14 +4,16 @@ using EvoSystems.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EvoSystems.Data.Migrations
 {
     [DbContext(typeof(EvoContext))]
-    partial class EvoContextModelSnapshot : ModelSnapshot
+    [Migration("20220309044653_Upadate Default")]
+    partial class UpadateDefault
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

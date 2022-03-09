@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EvoSystems.Domain.Entities
+namespace EvoSystems.Application.ViewModels
 {
-    public class Funcionário
+    public class UserViewModel
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }
-        public int Foto { get; set; }
-        public string RG { get; set; }
-        public Guid IdDepartamento { get; set; }
+        public string Sigla { get; set; }
     }
 }

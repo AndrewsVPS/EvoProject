@@ -7,7 +7,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using EvoSystems.Data.Context;
 using EvoSystems.IoC;
 
 namespace Evo_Systems

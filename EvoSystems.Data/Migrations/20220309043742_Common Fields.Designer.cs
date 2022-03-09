@@ -4,14 +4,16 @@ using EvoSystems.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EvoSystems.Data.Migrations
 {
     [DbContext(typeof(EvoContext))]
-    partial class EvoContextModelSnapshot : ModelSnapshot
+    [Migration("20220309043742_Common Fields")]
+    partial class CommonFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +52,7 @@ namespace EvoSystems.Data.Migrations
                         new
                         {
                             Id = new Guid("acaf2a77-b7e8-4ca2-9698-3b3910df5142"),
-                            DateCreated = new DateTime(2022, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Nome = "Tecnologia Da Informação",
                             Silgla = "T.I"
