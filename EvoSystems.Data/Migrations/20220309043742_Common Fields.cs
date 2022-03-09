@@ -9,18 +9,18 @@ namespace EvoSystems.Data.Migrations
         {
             migrationBuilder.AddColumn<DateTime>(
                 name: "DateCreated",
-                table: "Departamento",
+                table: "Users",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "DateUpdated",
-                table: "Departamento",
+                table: "Users",
                 nullable: true);
 
             migrationBuilder.AddColumn<bool>(
                 name: "IsDeleted",
-                table: "Departamento",
+                table: "Users",
                 nullable: false,
                 defaultValue: false);
         }
@@ -29,15 +29,15 @@ namespace EvoSystems.Data.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "DateCreated",
-                table: "Departamento");
+                table: "Users");
 
             migrationBuilder.DropColumn(
                 name: "DateUpdated",
-                table: "Departamento");
+                table: "Users");
 
             migrationBuilder.DropColumn(
                 name: "IsDeleted",
-                table: "Departamento");
+                table: "Users");
         }
     }
 }

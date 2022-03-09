@@ -8,7 +8,7 @@ namespace EvoSystems.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.UpdateData(
-                table: "Departamento",
+                table: "Users",
                 keyColumn: "Id",
                 keyValue: new Guid("acaf2a77-b7e8-4ca2-9698-3b3910df5142"),
                 column: "DateCreated",
@@ -18,7 +18,7 @@ namespace EvoSystems.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.UpdateData(
-                table: "Departamento",
+                table: "Users",
                 keyColumn: "Id",
                 keyValue: new Guid("acaf2a77-b7e8-4ca2-9698-3b3910df5142"),
                 column: "DateCreated",

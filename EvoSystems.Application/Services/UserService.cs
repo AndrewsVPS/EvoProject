@@ -23,7 +23,7 @@ namespace EvoSystems.Application.Services
         {
             List<UserViewModel> _userViewModels = new List<UserViewModel>();
 
-            IEnumerable<Departamento> _users = this.userRepository.GetAll();
+            IEnumerable<Users> _users = this.userRepository.GetAll();
 
             foreach(var item in _users)
                 _userViewModels.Add(new UserViewModel { Id = item.Id, Nome = item.Nome, Sigla = item.Silgla });

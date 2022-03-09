@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace EvoSystems.Data.Mappings
 {
-    public class DepartamentoMap : IEntityTypeConfiguration<Departamento>
+    public class UsersMap : IEntityTypeConfiguration<Users>
     { 
-        public void Configure(EntityTypeBuilder<Departamento> builder)
+        public void Configure(EntityTypeBuilder<Users> builder)
         {
             builder.Property(x => x.Id).IsRequired();
             builder.Property(x => x.Nome).HasMaxLength(100).IsRequired();

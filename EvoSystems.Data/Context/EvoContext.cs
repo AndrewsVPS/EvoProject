@@ -17,13 +17,13 @@ namespace EvoSystems.Data.Context
 
         #region "DBSets"
 
-        public DbSet<Departamento> Users { get; set; }
+        public DbSet<Users> Users { get; set; }
 
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new DepartamentoMap());
+            modelBuilder.ApplyConfiguration(new UsersMap());
 
             modelBuilder.SeedData();
 

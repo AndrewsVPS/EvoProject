@@ -9,6 +9,6 @@ namespace EvoSystems.Domain.Interfaces
 {
     public interface IUserRepository
     {
-        IEnumerable<Departamento> GetAll();
+        IEnumerable<Users> GetAll();
     }
 }
