@@ -17,11 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1-Data", "4.1-Data", "{CF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2-CrossCutting", "4.2-CrossCutting", "{515AB010-D721-40A3-B85D-02FE5E29738F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoSystems.Application", "EvoSystems.Application\EvoSystems.Application.csproj", "{C1E29895-BF3F-49AE-9A79-AE5734ECAF77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvoSystems.Application", "EvoSystems.Application\EvoSystems.Application.csproj", "{C1E29895-BF3F-49AE-9A79-AE5734ECAF77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoSystems.Domain", "EvoSystems.Domain\EvoSystems.Domain.csproj", "{83280D88-7CA2-4C8E-AF26-2AAFA2F64B8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvoSystems.Domain", "EvoSystems.Domain\EvoSystems.Domain.csproj", "{83280D88-7CA2-4C8E-AF26-2AAFA2F64B8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoSystems.Data", "EvoSystems.Data\EvoSystems.Data.csproj", "{75E1034C-CEA5-4801-BC50-02F70BB10044}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvoSystems.Data", "EvoSystems.Data\EvoSystems.Data.csproj", "{75E1034C-CEA5-4801-BC50-02F70BB10044}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoSystems.IoC", "EvoSystems.IoC\EvoSystems.IoC.csproj", "{862B784D-CAAB-4996-8ED7-79871C89EBF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{75E1034C-CEA5-4801-BC50-02F70BB10044}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75E1034C-CEA5-4801-BC50-02F70BB10044}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75E1034C-CEA5-4801-BC50-02F70BB10044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{862B784D-CAAB-4996-8ED7-79871C89EBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{862B784D-CAAB-4996-8ED7-79871C89EBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{862B784D-CAAB-4996-8ED7-79871C89EBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{862B784D-CAAB-4996-8ED7-79871C89EBF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{C1E29895-BF3F-49AE-9A79-AE5734ECAF77} = {53988DDE-EC99-4A0F-9382-AAFAB744BEA0}
 		{83280D88-7CA2-4C8E-AF26-2AAFA2F64B8C} = {BF13214C-DC18-4B75-B932-2109E550A099}
 		{75E1034C-CEA5-4801-BC50-02F70BB10044} = {CF7062EF-F1DA-4F3D-991A-C0C4C1532DC7}
+		{862B784D-CAAB-4996-8ED7-79871C89EBF4} = {515AB010-D721-40A3-B85D-02FE5E29738F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5FF0A338-CC25-4320-80A7-7E00F9F6C8BC}

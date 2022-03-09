@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using EvoSystems.Data.Context;
+using EvoSystems.IoC;
+
 namespace Evo_Systems
 {
     public class Startup
@@ -25,6 +27,8 @@ namespace Evo_Systems
             services.AddControllersWithViews();
 
             services.AddDbContext<EvoContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("EvoSystemsDB")).EnableSensitiveDataLogging());
+            NativeInjector.RegisterServices(services);
+
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

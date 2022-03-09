@@ -35,7 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EvoSystems.Application\EvoSystems.Application.csproj" />
     <ProjectReference Include="..\EvoSystems.Data\EvoSystems.Data.csproj" />
+    <ProjectReference Include="..\EvoSystems.IoC\EvoSystems.IoC.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
