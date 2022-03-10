@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using EvoSystems.IoC;
 using EvoSystems.Application.AutoMapper;
 using AutoMapper;
+using Evo.Swagger;
 
 namespace Evo_Systems
 {
@@ -31,6 +32,7 @@ namespace Evo_Systems
             NativeInjector.RegisterServices(services);
 
             services.AddAutoMapper(typeof(AutoMapperSetup));
+            services.AddSwaggerConfiguration();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -52,6 +54,8 @@ namespace Evo_Systems
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseSwaggerConfiguration();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

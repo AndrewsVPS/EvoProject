@@ -37,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Evo.Swagger\Evo.Swagger.csproj" />
     <ProjectReference Include="..\EvoSystems.Application\EvoSystems.Application.csproj" />
     <ProjectReference Include="..\EvoSystems.Data\EvoSystems.Data.csproj" />
     <ProjectReference Include="..\EvoSystems.IoC\EvoSystems.IoC.csproj" />
