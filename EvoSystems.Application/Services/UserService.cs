@@ -33,19 +33,24 @@ namespace EvoSystems.Application.Services
             foreach(var item in _users)
               //_userViewModels.Add(mapper.Map<UserViewModel>(item));
 
-                _userViewModels.Add(new UserViewModel { Id = item.Id, Nome = item.Nome, Sigla = item.Email });
+                _userViewModels.Add(new UserViewModel { Id = item.Id, Nome = item.Nome, Sigla = item.Sigla});
 
             return _userViewModels;
         }
 
         public bool Post(UserViewModel userViewModel)
         {
-             Users _users = new Users
-                 {
-                    Id = Guid.NewGuid(),
-                    Nome = userViewModel.Nome,
-                    Email = userViewModel.Sigla
-                };
+
+            if(userViewModel.Id != Guid.Empty)
+                throw new Exception("IdDepartamento está vazio");
+
+            Users _users = new Users
+            {
+
+                Id = Guid.NewGuid(),
+                Nome = userViewModel.Nome,
+                Sigla = userViewModel.Sigla
+            };
 
             //Users _users = mapper.Map<Users>(userViewModel); 
 
@@ -57,7 +62,7 @@ namespace EvoSystems.Application.Services
         public UserViewModel GetById(string id)
         {
             if (!Guid.TryParse(id, out Guid userId))
-                throw new Exception("Departamento não é válido");
+                throw new Exception("IdDepartamento não é válido");
 
             Users _users = this.userRepository.Find(x => x.Id == userId && !x.IsDeleted);
             if (_users == null)
@@ -68,6 +73,10 @@ namespace EvoSystems.Application.Services
 
         public bool Put(UserViewModel userViewModel)
         {
+
+            if (userViewModel.Id == Guid.Empty)
+                throw new Exception("Id é invalido");
+
             Users _users = this.userRepository.Find(x => x.Id == userViewModel.Id && !x.IsDeleted);
             if (_users == null)
                 throw new Exception("Departamento não encontrado");

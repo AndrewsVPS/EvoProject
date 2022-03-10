@@ -26,4 +26,8 @@
     <ProjectReference Include="..\EvoSystems.Domain\EvoSystems.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

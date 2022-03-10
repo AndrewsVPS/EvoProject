@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EvoSystems.Data.Migrations
 {
     [DbContext(typeof(EvoContext))]
-    [Migration("20220310041401_Global Configurations")]
-    partial class GlobalConfigurations
+    [Migration("20220310195406_Users Table")]
+    partial class UsersTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,7 +30,7 @@ namespace EvoSystems.Data.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 3, 10, 1, 14, 0, 872, DateTimeKind.Local).AddTicks(6219));
+                        .HasDefaultValue(new DateTime(2022, 3, 10, 16, 54, 6, 405, DateTimeKind.Local).AddTicks(8511));
 
                     b.Property<DateTime?>("DateUpdated")
                         .HasColumnType("datetime2");
@@ -45,7 +45,7 @@ namespace EvoSystems.Data.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<string>("Silgla")
+                    b.Property<string>("Sigla")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -59,7 +59,7 @@ namespace EvoSystems.Data.Migrations
                             DateCreated = new DateTime(2022, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Nome = "Tecnologia Da Informação",
-                            Silgla = "T.I"
+                            Sigla = "T.i"
                         });
                 });
 #pragma warning restore 612, 618
