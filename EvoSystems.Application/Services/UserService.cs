@@ -62,6 +62,7 @@ namespace EvoSystems.Application.Services
             Users _users = this.userRepository.Find(x => x.Id == userId && !x.IsDeleted);
             if (_users == null)
                 throw new Exception("Departamento não encontrado");
+
             return mapper.Map<UserViewModel>(_users);
         }
 
@@ -76,6 +77,18 @@ namespace EvoSystems.Application.Services
             this.userRepository.Update(_users);
 
             return true;
+        }
+
+        public bool Delete(string id)
+        {
+            if (!Guid.TryParse(id, out Guid userId))
+                throw new Exception("Departamento não é válido");
+
+            Users _users = this.userRepository.Find(x => x.Id == userId && !x.IsDeleted);
+            if (_users == null)
+                throw new Exception("Departamento não encontrado");
+
+            return this.userRepository.Delete(_users);
         }
 
     }
