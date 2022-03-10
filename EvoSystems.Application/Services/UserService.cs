@@ -54,6 +54,30 @@ namespace EvoSystems.Application.Services
             return true;
         }
 
+        public UserViewModel GetById(string id)
+        {
+            if (!Guid.TryParse(id, out Guid userId))
+                throw new Exception("Departamento não é válido");
+
+            Users _users = this.userRepository.Find(x => x.Id == userId && !x.IsDeleted);
+            if (_users == null)
+                throw new Exception("Departamento não encontrado");
+            return mapper.Map<UserViewModel>(_users);
+        }
+
+        public bool Put(UserViewModel userViewModel)
+        {
+            Users _users = this.userRepository.Find(x => x.Id == userViewModel.Id && !x.IsDeleted);
+            if (_users == null)
+                throw new Exception("Departamento não encontrado");
+
+            _users = mapper.Map<Users>(userViewModel);
+
+            this.userRepository.Update(_users);
+
+            return true;
+        }
+
     }
 }
     
