@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EvoSystems.Domain.Interfaces
 {
-    public interface IUserRepository
+    public interface IUserRepository : IRepository<Users>
     {
         IEnumerable<Users> GetAll();
     }

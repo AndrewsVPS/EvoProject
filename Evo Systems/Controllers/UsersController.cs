@@ -1,5 +1,6 @@
 ﻿using EvoSystems.Application.Interfaces;
 using EvoSystems.Application.Services;
+using EvoSystems.Application.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,16 +14,22 @@ namespace Evo_Systems.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly UserService userService;
+        private readonly IUserService userService;
         public UsersController(IUserService userService)
         {
-            this.userService = (UserService)userService;
+            this.userService = userService;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(this.userService.Get());
+        }
+
+        [HttpPost]
+        public IActionResult Post(UserViewModel userViewModel)
+        {
+            return Ok(this.userService.Post(userViewModel));
         }
     }
 }

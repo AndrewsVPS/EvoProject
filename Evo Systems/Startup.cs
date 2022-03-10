@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using EvoSystems.IoC;
+using EvoSystems.Application.AutoMapper;
+using AutoMapper;
 
 namespace Evo_Systems
 {
@@ -28,6 +30,7 @@ namespace Evo_Systems
             services.AddDbContext<EvoContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("EvoSystemsDB")).EnableSensitiveDataLogging());
             NativeInjector.RegisterServices(services);
 
+            services.AddAutoMapper(typeof(AutoMapperSetup));
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

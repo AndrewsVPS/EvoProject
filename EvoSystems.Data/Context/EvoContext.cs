@@ -25,6 +25,8 @@ namespace EvoSystems.Data.Context
         {
             modelBuilder.ApplyConfiguration(new UsersMap());
 
+            modelBuilder.ApplyGlobalConfigurations();
+
             modelBuilder.SeedData();
 
             base.OnModelCreating(modelBuilder);

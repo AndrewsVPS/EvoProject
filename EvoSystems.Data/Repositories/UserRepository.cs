@@ -16,7 +16,7 @@ namespace EvoSystems.Data.Repositories
             :base(context) { }
         public IEnumerable<Users> GetAll()
         {
-            return Query(x => x.IsDeleted);
+            return Query(x => !x.IsDeleted);
         }
     }
 }
