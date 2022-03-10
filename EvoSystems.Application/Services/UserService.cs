@@ -91,22 +91,8 @@ namespace EvoSystems.Application.Services
 
             return this.userRepository.Delete(_users);
         }
-
-        public UsersAuthenticateResponseViewModel Authenticate(UsersAuthenticateResponseViewModel users)
-        {
-            Users _users = this.userRepository.Find(x => !x.IsDeleted && x.Email.ToLower() == users.Email.ToString());
-            if (_users == null)
-                throw new Exception("Usuário não encontrado");
-
-            return new UsersAuthenticateResponseViewModel (mapper.Map<UserViewModel>(_users), TokenService.GenerateToken(_users));
-        }
-
-        public object Authenticate(UsersAuthenticateRequestViewModel userViewModel)
-        {
-            throw new NotImplementedException();
-        }
     }   
 
-    }
+}
 
     

@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Evo.Auth\Evo.Auth.csproj" />
     <ProjectReference Include="..\EvoSystems.Domain\EvoSystems.Domain.csproj" />
   </ItemGroup>
 

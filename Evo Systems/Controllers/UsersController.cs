@@ -51,11 +51,5 @@ namespace Evo_Systems.Controllers
             return Ok(this.userService.Delete(id));
         }
 
-        [HttpPost("authenticate")]
-        public IActionResult Authenticate(UsersAuthenticateRequestViewModel userViewModel)
-        {
-            return Ok(this.userService.Authenticate(userViewModel));
-        }
-
     }
 }
