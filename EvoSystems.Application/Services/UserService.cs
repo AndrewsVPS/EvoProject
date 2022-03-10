@@ -41,8 +41,8 @@ namespace EvoSystems.Application.Services
         public bool Post(UserViewModel userViewModel)
         {
 
-            if(userViewModel.Id != Guid.Empty)
-                throw new Exception("IdDepartamento está vazio");
+            //if(userViewModel.Id != Guid.Empty)
+                //throw new Exception("IdDepartamento está vazio");
 
             Users _users = new Users
             {
