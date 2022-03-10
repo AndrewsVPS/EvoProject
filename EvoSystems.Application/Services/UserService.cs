@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Evo.Auth.Services;
 using EvoSystems.Application.Interfaces;
 using EvoSystems.Application.ViewModels;
 using EvoSystems.Domain.Entities;
