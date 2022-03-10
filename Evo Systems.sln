@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvoSystems.Data", "EvoSyste
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvoSystems.IoC", "EvoSystems.IoC\EvoSystems.IoC.csproj", "{862B784D-CAAB-4996-8ED7-79871C89EBF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evo.Swagger", "Evo.Swagger\Evo.Swagger.csproj", "{8D16E8CA-54FE-4E2D-8C55-F866493114C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evo.Swagger", "Evo.Swagger\Evo.Swagger.csproj", "{8D16E8CA-54FE-4E2D-8C55-F866493114C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evo.Auth", "Evo.Auth\Evo.Auth.csproj", "{BB381F3F-2341-4849-92BF-34C24409C78B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{8D16E8CA-54FE-4E2D-8C55-F866493114C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D16E8CA-54FE-4E2D-8C55-F866493114C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D16E8CA-54FE-4E2D-8C55-F866493114C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB381F3F-2341-4849-92BF-34C24409C78B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB381F3F-2341-4849-92BF-34C24409C78B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB381F3F-2341-4849-92BF-34C24409C78B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB381F3F-2341-4849-92BF-34C24409C78B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{75E1034C-CEA5-4801-BC50-02F70BB10044} = {CF7062EF-F1DA-4F3D-991A-C0C4C1532DC7}
 		{862B784D-CAAB-4996-8ED7-79871C89EBF4} = {515AB010-D721-40A3-B85D-02FE5E29738F}
 		{8D16E8CA-54FE-4E2D-8C55-F866493114C3} = {515AB010-D721-40A3-B85D-02FE5E29738F}
+		{BB381F3F-2341-4849-92BF-34C24409C78B} = {515AB010-D721-40A3-B85D-02FE5E29738F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5FF0A338-CC25-4320-80A7-7E00F9F6C8BC}

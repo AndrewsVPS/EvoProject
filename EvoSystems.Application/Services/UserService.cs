@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Evo.Auth.Services;
 using EvoSystems.Application.Interfaces;
 using EvoSystems.Application.ViewModels;
 using EvoSystems.Domain.Entities;
@@ -33,7 +34,7 @@ namespace EvoSystems.Application.Services
             foreach(var item in _users)
               //_userViewModels.Add(mapper.Map<UserViewModel>(item));
 
-                _userViewModels.Add(new UserViewModel { Id = item.Id, Nome = item.Nome, Sigla = item.Silgla });
+                _userViewModels.Add(new UserViewModel { Id = item.Id, Nome = item.Nome, Sigla = item.Email });
 
             return _userViewModels;
         }
@@ -44,7 +45,7 @@ namespace EvoSystems.Application.Services
                  {
                     Id = Guid.NewGuid(),
                     Nome = userViewModel.Nome,
-                    Silgla = userViewModel.Sigla
+                    Email = userViewModel.Sigla
                 };
 
             //Users _users = mapper.Map<Users>(userViewModel); 
@@ -91,6 +92,21 @@ namespace EvoSystems.Application.Services
             return this.userRepository.Delete(_users);
         }
 
+        public UsersAuthenticateResponseViewModel Authenticate(UsersAuthenticateResponseViewModel users)
+        {
+            Users _users = this.userRepository.Find(x => !x.IsDeleted && x.Email.ToLower() == users.Email.ToString());
+            if (_users == null)
+                throw new Exception("Usuário não encontrado");
+
+            return new UsersAuthenticateResponseViewModel (mapper.Map<UserViewModel>(_users), TokenService.GenerateToken(_users));
+        }
+
+        public object Authenticate(UsersAuthenticateRequestViewModel userViewModel)
+        {
+            throw new NotImplementedException();
+        }
+    }   
+
     }
-}
+
     

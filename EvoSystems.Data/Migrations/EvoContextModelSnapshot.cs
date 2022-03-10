@@ -28,10 +28,13 @@ namespace EvoSystems.Data.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 3, 10, 1, 14, 0, 872, DateTimeKind.Local).AddTicks(6219));
+                        .HasDefaultValue(new DateTime(2022, 3, 10, 12, 52, 0, 668, DateTimeKind.Local).AddTicks(2006));
 
                     b.Property<DateTime?>("DateUpdated")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -43,9 +46,6 @@ namespace EvoSystems.Data.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<string>("Silgla")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Users");
@@ -55,9 +55,9 @@ namespace EvoSystems.Data.Migrations
                         {
                             Id = new Guid("acaf2a77-b7e8-4ca2-9698-3b3910df5142"),
                             DateCreated = new DateTime(2022, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "andrewsvictorps@gmail.com",
                             IsDeleted = false,
-                            Nome = "Tecnologia Da Informação",
-                            Silgla = "T.I"
+                            Nome = "Tecnologia Da Informação"
                         });
                 });
 #pragma warning restore 612, 618

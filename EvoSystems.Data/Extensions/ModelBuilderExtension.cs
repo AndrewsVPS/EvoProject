@@ -51,7 +51,7 @@ namespace EvoSystems.Data.Extensions
         {
                 builder.Entity<Users>()
                     .HasData(
-                        new Users { Id = Guid.Parse("acaf2a77-b7e8-4ca2-9698-3b3910df5142"), Nome = "Tecnologia Da Informação", Silgla = "T.I", DateCreated = new DateTime(2022,3,9), IsDeleted = false, DateUpdated = null}
+                        new Users { Id = Guid.Parse("acaf2a77-b7e8-4ca2-9698-3b3910df5142"), Nome = "Tecnologia Da Informação", Email = "andrewsvictorps@gmail.com", DateCreated = new DateTime(2022,3,9), IsDeleted = false, DateUpdated = null}
                     );
                 return builder;
             }

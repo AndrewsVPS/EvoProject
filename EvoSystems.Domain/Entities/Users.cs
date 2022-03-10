@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,6 @@ namespace EvoSystems.Domain.Entities
     public class Users : Entity
     {
         public string Nome { get; set; }
-        public string Silgla { get; set; }
+        public string Email { get; set; }
     }
 }
