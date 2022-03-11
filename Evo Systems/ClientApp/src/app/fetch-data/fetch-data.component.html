@@ -10,16 +10,17 @@
       <th>Id</th>
       <th>Nome</th>
       <th>RG</th>
+      <th>Foto</th>
       <th>Id Departamento</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let funcionarios of funcionarios">
-      <td>{{ funcionários.id }}</td>
-      <td>{{ funcionários.nome }}</td>
-      <td>{{ funcionários.rg }}</td>
-      <td>{{ funcionários.foto }}</td>
-      <td>{{ funcionários.departamentoid }}</td>
+    <tr *ngFor="let f of funcionarios">
+      <td>{{ f.id }}</td>
+      <td>{{ f.nome }}</td>
+      <td>{{ f.rg }}</td>
+      <td>{{ f.foto }}</td>
+      <td>{{ f.departamentoid }}</td>
     </tr>
   </tbody>
 </table>

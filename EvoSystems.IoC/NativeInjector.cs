@@ -14,7 +14,6 @@ namespace EvoSystems.IoC
             #region Services
 
             services.AddScoped<IDepartamentoService, DepartamentoService>();
-
             #endregion
 
             #region Repositories
