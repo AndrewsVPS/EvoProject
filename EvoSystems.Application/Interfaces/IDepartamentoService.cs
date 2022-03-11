@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EvoSystems.Application.Interfaces
 {
-    public interface IUserService
+    public interface IDepartamentoService
     {
         List<UserViewModel> Get();
         bool Post(UserViewModel userViewModel);

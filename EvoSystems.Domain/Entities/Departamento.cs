@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EvoSystems.Domain.Entities
 {
-    public class Users : Entity
+    public class Departamento : Entity
     {
         public string Nome { get; set; }
         public string Sigla { get; set; }

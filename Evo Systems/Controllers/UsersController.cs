@@ -12,43 +12,43 @@ namespace Evo_Systems.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class DepartamentoController : ControllerBase
     {
-        private readonly IUserService userService;
-        public UsersController(IUserService userService)
+        private readonly IDepartamentoService DepartamentoService;
+        public DepartamentoController(IDepartamentoService DepartamentoService)
         {
-            this.userService = userService;
+            this.DepartamentoService = DepartamentoService;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(this.userService.Get());
+            return Ok(this.DepartamentoService.Get());
         }
 
         [HttpPost]
         public IActionResult Post(UserViewModel userViewModel)
         {
-            return Ok(this.userService.Post(userViewModel));
+            return Ok(this.DepartamentoService.Post(userViewModel));
         }
 
         [HttpGet("{id}")]
         public IActionResult GetById(string id)
         {
-            return Ok(this.userService.GetById(id));
+            return Ok(this.DepartamentoService.GetById(id));
         }
         
         [HttpPut]
         public IActionResult Put(UserViewModel userViewModel)
         {
-            return Ok(this.userService.Put(userViewModel));
+            return Ok(this.DepartamentoService.Put(userViewModel));
         }
 
         [HttpDelete("{id}")]
 
         public IActionResult Delete(string id)
         {
-            return Ok(this.userService.Delete(id));
+            return Ok(this.DepartamentoService.Delete(id));
         }
 
     }

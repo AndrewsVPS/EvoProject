@@ -10,11 +10,12 @@ using Template.Data.Repositories;
 
 namespace EvoSystems.Data.Repositories
 {
-    public class UserRepository : Repository<Departamento>, IUserRepository
+    public class FuncionáriosRepository : Repository<Funcionários>, IFuncionáriosRepository
     {
-        public UserRepository(EvoContext context)
-            :base(context) { }
-        public IEnumerable<Departamento> GetAll()
+        public FuncionáriosRepository(EvoContext context) 
+            : base(context) { }
+
+        public IEnumerable<Funcionários> GetAll()
         {
             return Query(x => !x.IsDeleted);
         }

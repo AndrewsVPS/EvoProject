@@ -15,13 +15,13 @@ namespace EvoSystems.Application.AutoMapper
         {
             #region ViewModelToDomain
 
-            CreateMap<UserViewModel, Users>();
+            CreateMap<UserViewModel, Departamento>();
 
             #endregion
 
             #region DomainToViewModel
 
-            CreateMap<Users, UserViewModel>();
+            CreateMap<Departamento, UserViewModel>();
 
 
             #endregion

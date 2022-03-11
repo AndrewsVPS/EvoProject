@@ -13,7 +13,7 @@ namespace EvoSystems.IoC
         {
             #region Services
 
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IDepartamentoService, DepartamentoService>();
 
             #endregion
 

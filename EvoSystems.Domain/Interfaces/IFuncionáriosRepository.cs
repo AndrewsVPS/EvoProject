@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace EvoSystems.Domain.Interfaces
 {
-    public interface IUserRepository : IRepository<Departamento>
+    public interface IFuncionáriosRepository : IRepository<Funcionários>
     {
-        IEnumerable<Departamento> GetAll();
+        IEnumerable<Funcionários> GetAll();
     }
 }

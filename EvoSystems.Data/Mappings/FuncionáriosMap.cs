@@ -9,14 +9,12 @@ using System.Threading.Tasks;
 
 namespace EvoSystems.Data.Mappings
 {
-    public class DepartamentoMap : IEntityTypeConfiguration<Departamento>
-    { 
-        public void Configure(EntityTypeBuilder<Departamento> builder)
+    public class FuncionáriosMap : IEntityTypeConfiguration<Funcionários>
+    {
+        public void Configure(EntityTypeBuilder<Funcionários> builder)
         {
             builder.Property(x => x.Id).IsRequired();
-            builder.Property(x => x.Nome).HasMaxLength(100).IsRequired();
-
+            builder.Property(x => x.RG).HasMaxLength(100).IsRequired();
         }
-        
     }
 }

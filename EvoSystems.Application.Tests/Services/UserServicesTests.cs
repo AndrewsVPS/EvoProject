@@ -12,41 +12,41 @@ using Xunit;
 
 namespace EvoSystems.Application.Tests.Services
 {
-    public class UserServicesTests
+    public class DepartamentoServicesTests
     {
 
-        private UserService userService;
+        private DepartamentoService DepartamentoService;
 
-        public UserServicesTests()
+        public DepartamentoServicesTests()
         {
-            userService = new UserService(new Mock<IUserRepository>().Object, new Mock<IMapper>().Object);
+            DepartamentoService = new DepartamentoService(new Mock<IUserRepository>().Object, new Mock<IMapper>().Object);
         }
 
         [Fact]
         public void Post_SendingValidId()
         {
-            var exception = Assert.Throws<Exception>(() => userService.Post(new UserViewModel { Id = Guid.NewGuid() }));
+            var exception = Assert.Throws<Exception>(() => DepartamentoService.Post(new UserViewModel { Id = Guid.NewGuid() }));
             Assert.Equal("IdDepartamento está vazio", exception.Message);
         }
 
         [Fact]
         public void GetById_SendingEmptyGuide()
         {
-            var exception = Assert.Throws<Exception>(() => userService.GetById(""));
+            var exception = Assert.Throws<Exception>(() => DepartamentoService.GetById(""));
             Assert.Equal("IdDepartamento não é valido", exception.Message);   
         }
 
         [Fact]
         public void Put_SendingEmptyGuide()
         {
-            var exception = Assert.Throws<Exception>(() => userService.Put(new UserViewModel()));
+            var exception = Assert.Throws<Exception>(() => DepartamentoService.Put(new UserViewModel()));
             Assert.Equal("ID é invalido", exception.Message);
         }
 
         [Fact]
         public void Delete_SendingEmptyGuide()
         {
-            var exception = Assert.Throws<Exception>(() => userService.Delete(""));
+            var exception = Assert.Throws<Exception>(() => DepartamentoService.Delete(""));
             Assert.Equal("IdDepartamento não é valido", exception.Message);
         }
 

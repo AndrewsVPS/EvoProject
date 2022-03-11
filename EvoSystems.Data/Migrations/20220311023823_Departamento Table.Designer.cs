@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EvoSystems.Data.Migrations
 {
     [DbContext(typeof(EvoContext))]
-    [Migration("20220310195406_Users Table")]
-    partial class UsersTable
+    [Migration("20220311023823_Departamento Table")]
+    partial class DepartamentoTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace EvoSystems.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("EvoSystems.Domain.Entities.Users", b =>
+            modelBuilder.Entity("EvoSystems.Domain.Entities.Departamento", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,7 +30,7 @@ namespace EvoSystems.Data.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 3, 10, 16, 54, 6, 405, DateTimeKind.Local).AddTicks(8511));
+                        .HasDefaultValue(new DateTime(2022, 3, 10, 23, 38, 23, 251, DateTimeKind.Local).AddTicks(624));
 
                     b.Property<DateTime?>("DateUpdated")
                         .HasColumnType("datetime2");
@@ -50,7 +50,7 @@ namespace EvoSystems.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Departamento");
 
                     b.HasData(
                         new
