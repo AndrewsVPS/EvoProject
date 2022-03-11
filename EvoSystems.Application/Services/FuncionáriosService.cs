@@ -10,31 +10,30 @@ using System.Threading.Tasks;
 
 namespace EvoSystems.Application.Services
 {
-    public class FuncionáriosService : IFuncionáriosService
+    public class FuncionáriosService : IFuncionáriosRepository
     {
-        private readonly IFuncionáriosRepository funcionáriosRepository;
+        private readonly IFuncionáriosRepository FuncionáriosRepository;
         private readonly IMapper mapper;
         private object _funcionáriosViewModels;
 
         public FuncionáriosService(IFuncionáriosService funcionáriosService, IMapper mapper)
         {
-            this.funcionáriosRepository = funcionáriosRepository;
             this.mapper = mapper;
         }
 
         public List<Funcionários> Get()
         {
             List<Funcionários> funcionáriosViewModels = new List<Funcionários>();
-            IEnumerable<Funcionários> _funcionários = this.funcionáriosRepository.GetAll();
+            IEnumerable<Funcionários> _funcionários = this.FuncionáriosRepository.GetAll();
             _funcionáriosViewModels = mapper.Map<List<Funcionários>>(_funcionários);
 
             return (List<Funcionários>)_funcionáriosViewModels;
         }
 
-        public static List<Funcionários> GetByDI(int departamentoId)
+        public List<Funcionários> GetByDI(int departamentoId)
         {
             List<Funcionários> _funcionáriosViewModel = new List<Funcionários>();
-            IEnumerable<Funcionários> _funcionários = this.funcionáriosRepository.GetAll();
+            IEnumerable<Funcionários> _funcionários = FuncionáriosRepository.GetAll();
             foreach (Funcionários funcionários in _funcionários)
             {
                 if (funcionários.DepartamentoId == departamentoId)
@@ -45,17 +44,17 @@ namespace EvoSystems.Application.Services
 
         public bool Post(Funcionários funcionários)
         {
-            this.funcionáriosRepository.Create(funcionários);
+            this.FuncionáriosRepository.Create(funcionários);
             return true;
         }
 
         public bool Put(Funcionários funcionáriosViewModel)
         {
-            Funcionários _funcionários = this.funcionáriosRepository.Find(x => x.Id == funcionáriosViewModel.Id && !x.IsDeleted);
+            Funcionários _funcionários = this.FuncionáriosRepository.Find(x => x.Id == funcionáriosViewModel.Id && !x.IsDeleted);
             if (_funcionários == null)
                 throw new Exception("Funcionário não encontrado para editar");
             _funcionários = mapper.Map<Funcionários>(funcionáriosViewModel);
-            this.funcionáriosRepository.Update(_funcionários);
+            this.FuncionáriosRepository.Update(_funcionários);
             return true;
         }
 
@@ -63,20 +62,20 @@ namespace EvoSystems.Application.Services
         {
             if (!int.TryParse(id, out int funcionáriosId))
                 throw new Exception("Id de funcionário não é valido");
-            Funcionários _funcionários = this.funcionáriosRepository.Find(x => x.Id == funcionáriosId && !x.IsDeleted);
+            Funcionários _funcionários = this.FuncionáriosRepository.Find(x => x.Id == funcionáriosId && !x.IsDeleted);
             if (_funcionários == null)
                 throw new Exception("Funcionário não encontrado");
-            return this.funcionáriosRepository.Delete(_funcionários);
+            return this.FuncionáriosRepository.Delete(_funcionários);
         }
-
-        public List<Funcionários> GetById(int departamentoId)
-        {
-            throw new NotImplementedException();
         }
 
         public Funcionários GetById(string id)
         {
-            throw new NotImplementedException();
+            if (!int.TryParse(id, out int funcionáriosId))
+                throw new Exception("ID de Funcionário invalido");
+            Funcionários _funcionários = this.FuncionáriosRepository.Find(x => x.Id == funcionáriosId && !x.IsDeleted);
+            if (_funcionários == null)
+                throw new Exception("Funcionário não encontrado");
+            return _funcionários;
         }
     }
-}

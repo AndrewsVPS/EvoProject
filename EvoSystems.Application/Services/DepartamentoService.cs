@@ -85,7 +85,7 @@ namespace EvoSystems.Application.Services
 
         public bool Delete(string id)
         {
-            if (!Guid.TryParse(id, out int departamentoId))   
+            if (!int.TryParse(id, out int departamentoId))   
                 throw new Exception("Id de Departamento não é válido");
 
             Departamento _departamento = this.userRepository.Find(x => x.Id == departamentoId && !x.IsDeleted);
