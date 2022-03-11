@@ -10,11 +10,9 @@ namespace EvoSystems.Application.Interfaces
     public interface IFuncionáriosService 
     {
         List<Funcionários> Get();
-        public List<Funcionários> GetById(int departamentoId);
+        public List<Funcionários> GetByDI(int departamentoId);
         bool Post(Funcionários funcionários);
         bool Put(Funcionários funcionários);
         bool Delete(string id);
-        Funcionários GetById(string id);
-        int GetByDI(int departamentoId);
     }
 }
