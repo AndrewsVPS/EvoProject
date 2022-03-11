@@ -14,5 +14,6 @@ namespace EvoSystems.Application.Interfaces
         bool Post(Funcionários funcionários);
         bool Put(Funcionários funcionários);
         bool Delete(string id);
+        Funcionários GetById(string id);
     }
 }

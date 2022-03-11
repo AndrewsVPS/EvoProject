@@ -1,24 +1,25 @@
-<h1 id="tableLabel">Weather forecast</h1>
+<h1 id="tableLabel">Lista de Funcionários</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>Aqui está a lista de todos os funcionários cadastrados</p>
 
 <p *ngIf="!forecasts"><em>Loading...</em></p>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>RG</th>
+      <th>Id Departamento</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
+    <tr *ngFor="let funcionarios of funcionarios">
+      <td>{{ funcionários.id }}</td>
+      <td>{{ funcionários.nome }}</td>
+      <td>{{ funcionários.rg }}</td>
+      <td>{{ funcionários.foto }}</td>
+      <td>{{ funcionários.departamentoid }}</td>
     </tr>
   </tbody>
 </table>

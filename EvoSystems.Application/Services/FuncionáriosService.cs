@@ -68,7 +68,6 @@ namespace EvoSystems.Application.Services
                 throw new Exception("Funcionário não encontrado");
             return this.funcionáriosRepository.Delete(_funcionários);
         }
-        }
 
         public Funcionários GetById(string id)
         {
@@ -80,3 +79,4 @@ namespace EvoSystems.Application.Services
             return _funcionários;
         }
     }
+}
