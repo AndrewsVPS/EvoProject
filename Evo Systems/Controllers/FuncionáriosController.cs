@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Evo_Systems.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api2/[controller]")]
     [ApiController]
     public class FuncionáriosController : ControllerBase
     {
@@ -19,7 +19,7 @@ namespace Evo_Systems.Controllers
             this.funcionáriosService = funcionáriosService;
         } 
 
-        [HttpGet("{funcionarios}")]
+        [HttpGet()]
         public IActionResult Get()
         {
             return Ok(this.funcionáriosService.Get());

@@ -12,8 +12,6 @@ using EvoSystems.Application.AutoMapper;
 using AutoMapper;
 using Evo.Swagger;
 using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Evo_Systems
 {

@@ -1,0 +1,20 @@
+<form [formGroup]="formDepartamento">
+  <label>ID:</label>
+  <br />
+  <input formControlName="id" type="text">
+  <br />
+  <label>Nome:</label>
+  <br />
+  <input formControlName="nome" type="text">
+  <br />
+  <label>Sigla:</label>
+  <br />
+  <input formControlName="sigla" type="text">
+  <br />
+
+</form>
+
+<button (click)="formput()">Editar</button>
+<pre>
+{{departamentoput | json}}
+</pre>

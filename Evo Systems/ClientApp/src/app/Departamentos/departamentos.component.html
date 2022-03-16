@@ -1,0 +1,111 @@
+
+  <div *ngIf="selectedFuncionário2">
+    <button class="btn btn-warning frmBtn" (click)="selectFuncionário2('')">Fechar</button>
+
+    <br>
+    <br>
+    <form [formGroup]="formFuncionárioPost">
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Digite o Nome do Funcionário </label>
+        <br />
+        <input class="form-control" formControlName="nome" type="text" placeholder="Nome do Funcionário">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Digite o RG do Funcionáro</label>
+        <br />
+        <input class="form-control" formControlName="rg" type="text" placeholder="RG do Funcionáro">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Digite o URL da Foto do Funcionário</label>
+        <br />
+        <input class="form-control" formControlName="foto" type="text" placeholder="URL da Foto do Funcionário">
+      </div>
+
+      <button type="submit" class="btn btn-primary frmBtn" (click)="saveFuncionárioPost()">Enviar</button>
+    </form>
+  </div>
+  <div *ngIf="selectedFuncionário">
+
+
+
+    <button class="btn btn-warning frmBtn" (click)="selectFuncionário('')">Fechar</button>
+
+    <br>
+    <br>
+    <form [formGroup]="formFuncionárioPut">
+      <div class="form-group">
+
+        <label for="exampleInputEmail1">Digite o ID do Funcionario que queira editar</label>
+        <br />
+
+        <input class="form-control" formControlName="id" type="text" placeholder="ID do Funcionario que queira editar">
+
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Digite o Novo Nome</label>
+        <br />
+        <input class="form-control" formControlName="nome" type="text" placeholder="Novo Nome">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Digite o Novo RG</label>
+        <br />
+        <input class="form-control" formControlName="rg" type="text" placeholder="Novo RG">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Digite a Nova URL da Foto</label>
+        <br />
+        <input class="form-control" formControlName="foto" type="text" placeholder="Nova URL da Foto">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Digite o Novo ID do departamento</label>
+        <br />
+        <input class="form-control" formControlName="departamentoId" type="text" placeholder="Novo ID do departamento">
+      </div>
+
+      <button type="submit" class="btn btn-primary frmBtn" (click)="saveFuncionário()">Enviar</button>
+    </form>
+  </div>
+
+  <div *ngIf="!selectedFuncionário2">
+    <div *ngIf="!selectedFuncionário">
+      <div *ngIf="!selectedFuncionário2">
+
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+
+  <h1 id="tableLabel">Funcionários</h1>
+
+  <button type="submit" class="btn btn-link " [routerLink]="['/']">← Departamentos</button>
+  <br>
+  <br>
+  <table class='table table-hover' aria-labelledby="tableLabel">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>RG</th>
+        <th>Foto</th>
+        <th></th>
+        <th><button class="btn btn-success frmBtn" (click)="selectFuncionário2(funcionários)">Cadastrar</button></th>
+
+      </tr>
+    <tbody>
+      <tr *ngFor="let f of funcionários">
+        <td>{{ f.id }}</td>
+        <td>{{ f.name }}</td>
+        <td>{{ f.rg }}</td>
+        <td><img src="{{ f.foto }}"></td>
+        <td><button class="btn btn-primary frmBtn" (click)="selectFuncionário(funcionários)">Editar</button></td>
+        <td><button class="btn btn-danger  frmBtn" (click)="deleteFuncionário(funcionários.id)">Deletar</button></td>
+
+
+
+      </tr>
+    </tbody>
+  </table>
+

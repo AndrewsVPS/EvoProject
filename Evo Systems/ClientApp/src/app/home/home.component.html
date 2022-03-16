@@ -1,20 +1,95 @@
-<h1 id="tableLabel">Departamentos</h1>
 
-<p>Liste, cadastre ou edite os departamentos</p>
+  <div *ngIf="selectedDepartamento2">
+    <button class="btn btn-warning frmBtn" (click)="selectDepartamento2('')">Fechar</button>
 
-<table class='table table-striped' aria-labelledby="tableLabel">
-  <thead>
+    <br>
+    <br>
+    <form [formGroup]="formDepartamentoPost">
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Digite o Nome do Departamento</label>
+        <br />
+        <input class="form-control" formControlName="nome" type="text" placeholder="Nome do Departamento">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Digite a Sigla do Departamento</label>
+        <br />
+        <input class="form-control" formControlName="sigla" type="text" placeholder="Sigla do Departamento">
+      </div>
+      <button type="submit" class="btn btn-primary frmBtn" (click)="saveDepartamentoPost()">Enviar</button>
+    </form>
+
+  </div>
+
+  <div *ngIf="selectedDepartamento">
+
+
+
+    <button class="btn btn-warning frmBtn" (click)="selectDepartamento('')">Fechar</button>
+
+    <br>
+    <br>
+    <form [formGroup]="formDepartamento">
+      <div class="form-group">
+
+        <label for="exampleInputEmail1">Digite o ID do Departamento que queira editar</label>
+        <br />
+
+        <input class="form-control" formControlName="id" type="text" placeholder="ID do Departamento que queira editar">
+
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Digite o nome novo</label>
+        <br />
+        <input class="form-control" formControlName="nome" type="text" placeholder="Novo Nome">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Digite a nova sigla</label>
+        <br />
+        <input class="form-control" formControlName="sigla" type="text" placeholder="Nova Sigla">
+      </div>
+
+      <button type="submit" class="btn btn-primary frmBtn" (click)="saveDepartamento()">Enviar</button>
+    </form>
+  </div>
+
+  <div *ngIf="!selectedDepartamento2">
+    <div *ngIf="!selectedDepartamento">
+      <div *ngIf="!selectedDepartamento2">
+
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <h1 id="tableLabel">Departamentos</h1>
+
+  <p>Liste, cadastre ou edite os departamentos</p>
+
+  <br>
+
+  <table class='table table-hover' aria-labelledby="tableLabel">
     <tr>
-      <th>Id</th>
+      <th>ID</th>
       <th>Nome</th>
       <th>Sigla</th>
+      <th>Funcionários</th>
+      <th></th>
+      <th><button class="btn btn-success frmBtn" (click)="selectDepartamento(departamentos)">Cadastrar</button></th>
     </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let f of funcionarios">
-      <td>{{ f.id }}</td>
-      <td>{{ f.nome }}</td>
-      <td>{{ f.sigla }}</td>
-    </tr>
-  </tbody>
-</table>
+    <tbody>
+      <tr *ngFor="let d of departamentos">
+        <td>{{ d.id }}</td>
+        <td>{{ d.name }}</td>
+        <td>{{ d.sigla }}</td>
+        <td></td>
+        <td><button class="btn btn-info frmBtn" [routerLink]="['/departamento/',departamentos.id]">Ver Lista</button></td>
+        <td><button class="btn btn-primary frmBtn" (click)="selectDepartamento(departamentos)">Editar</button></td>
+        <td><button class="btn btn-danger frmBtn" (click)="deleteDepartamento(departamentos.id)">Deletar</button></td>
+
+
+
+      </tr>
+    </tbody>
+  </table>
