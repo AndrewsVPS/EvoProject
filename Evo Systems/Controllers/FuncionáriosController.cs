@@ -19,7 +19,7 @@ namespace Evo_Systems.Controllers
             this.funcionáriosService = funcionáriosService;
         } 
 
-        [HttpGet]
+        [HttpGet("{funcionarios}")]
         public IActionResult Get()
         {
             return Ok(this.funcionáriosService.Get());

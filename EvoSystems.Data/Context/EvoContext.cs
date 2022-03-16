@@ -29,7 +29,6 @@ namespace EvoSystems.Data.Context
 
             modelBuilder.ApplyGlobalConfigurations();
 
-            modelBuilder.SeedData();
 
             base.OnModelCreating(modelBuilder);
         }

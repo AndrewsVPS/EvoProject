@@ -31,7 +31,7 @@ namespace Evo_Systems
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<EvoContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("EvoSystemsDB")).EnableSensitiveDataLogging());
+            services.AddDbContext<EvoContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("EvosystemsDB")).EnableSensitiveDataLogging());
             NativeInjector.RegisterServices(services);
 
             services.AddAutoMapper(typeof(AutoMapperSetup));
